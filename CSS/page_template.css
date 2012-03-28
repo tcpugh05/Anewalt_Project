@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'walkway';
+    src: local('☺'), 
+        url('type/Walkway_SemiBold.ttf') format('truetype');
+}
+
+
+a:link{color:#303030;}
+a:visited{color:#303030;}
+a:hover{color:#303030;}
+a:active{color:#303030;}
+
+
+
+html{
+	background-color:#FBF5E6; 
+	font-family: walkway,sans-serif;
+}
+
+.forms{
+	font-size:150%; 
+	text-align:center;  
+}
+
+#parent     {height:500px;}
+#floater	{float:left; height:50%; width:100%; margin-bottom:-50px;}
+#content	{clear:both; height:100px;}
+
+#login_form{
+	font-size:250%; 
+}
+
+#register_form{
+	font-size:175%;
+}
+#search_form{
+	font-size:300%;
+	text-align: center; 
+}
+
+#error{
+	border:1px solid gray;
+	text-align: center;
+	border-bottom: 0px;
+}
+div.my_wrapper{
+    width: 100%;
+    font-size:175%;
+}
+div.my_left_box{
+    float: left;
+    padding: 0px;
+    width: 49.78%;
+    border: 1px solid gray;
+
+}
+div.my_right_box{
+    float: right;
+    padding: 0px;
+    width: 49.77%;
+    border: 1px solid gray;
+}
+#alter{
+	float:right;
+	padding:0px;
+	width:49.77%;
+	border: 1px solid gray; 
+	font size:175%;
+	border-top: 0px; 
+	font-size: 125%; 
+}
+
+

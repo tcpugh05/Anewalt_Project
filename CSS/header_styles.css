@@ -1,0 +1,12 @@
+@font-face 
+{
+    font-family: 'walkway';
+    src: local('☺'), 
+        url('type/Walkway_SemiBold.ttf') format('truetype');
+}
+
+
+#links{
+	text-align:center; 
+	font-size: 250%;
+}
