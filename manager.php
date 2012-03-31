@@ -16,7 +16,6 @@
 		echo "First Name: " .$_SESSION['first_name']."</br>";
 		echo "Last Name: " .$_SESSION['last_name']."</br>";
 		echo "User Name: ".$_SESSION['username']."</br>";
-		echo "Of type: ".$_SESSION['type'];
     	 ?>
 	</div>
 
