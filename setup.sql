@@ -26,10 +26,10 @@ CREATE TABLE `employers` (
 DROP TABLE IF EXISTS `careers`;
 CREATE TABLE `careers`(
 	`career_id` int(15) NOT NULL auto_increment,
--- 	`date` variable
+	`a_datetime` varchar(25) NOT NULL default '',
 	`description` varchar(256),
 	`contact_info` varchar(120),
-	`skills needed` varchar(120),
+	`skills_needed` varchar(120),
 	`posted_by` varchar(15),
 	 PRIMARY KEY (`career_id`)
 );
