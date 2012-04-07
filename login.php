@@ -1,9 +1,7 @@
 <html>
 <head>
-	<?php 
-	include 'header.php'; ?>
+<?php include 'header.php'; ?>
 </head>
-	
 	<div id="parent">
 	<div id="floater"></div>	
 		<div id="content">

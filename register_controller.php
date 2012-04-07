@@ -79,7 +79,7 @@ if ($type == "Student"){
 	}
 $sql ="INSERT INTO students(first_name,last_name,user_name,password)
 			VALUES('".$first_name."','".$last_name."','".$username."','" .$password."');"; 
-	echo $sql; 
+	//echo $sql; 
 	mysql_query($sql,$con) or die('</br>Could not insert into table '.mysql_error());
 }
 

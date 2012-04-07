@@ -33,3 +33,14 @@ CREATE TABLE `careers`(
 	`posted_by` varchar(15),
 	 PRIMARY KEY (`career_id`)
 );
+
+DROP TABLE IF EXISTS `file`;
+CREATE TABLE `file` (
+    `id`        Int Unsigned Not Null Auto_Increment,
+    `name`      VarChar(255) Not Null Default 'Untitled.txt',
+    `mime`      VarChar(50) Not Null Default 'text/plain',
+    `size`      BigInt Unsigned Not Null Default 0,
+    `data`      MediumBlob Not Null,
+    `created`   DateTime Not Null,
+    PRIMARY KEY (`id`)
+);
