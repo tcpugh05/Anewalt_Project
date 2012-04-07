@@ -6,6 +6,7 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 $rpassword = $_POST["rpassword"];
 $type = $_POST["type"] ;
+$email = $_POST["email"];
 
 //Cleansing data from my injection attacks and XSS attacks
 $first_name = mysql_real_escape_string(strip_tags($first_name));
@@ -13,6 +14,7 @@ $last_name = mysql_real_escape_string(strip_tags($last_name));
 $username = mysql_real_escape_string(strip_tags($username));
 $rpassword = mysql_real_escape_string(strip_tags($rpassword));
 $type = mysql_real_escape_string(strip_tags($type));
+$email = mysql_real_escape_string(strip_tags($email));
 
 
 
@@ -21,9 +23,10 @@ $_SESSION['last_name'] = $last_name;
 $_SESSION['username'] = $username;
 $_SESSION['password'] = $password;
 $_SESSION['rpassword'] = $rpassword;
+$_SESSION['email'] = $email; 
 $_SESSION['type'] = $type;
 
-$required = array('first_name','last_name','username','password','rpassword','type');
+$required = array('first_name','last_name','username','password','rpassword','type','email');
 $error = false;
 	foreach($required as $field){
 		if(empty($_POST[$field])){
@@ -42,12 +45,11 @@ $error = false;
 		exit; 	
 	}
 
-	/*can use this if we need to add email later
-	 * $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';//$email_exp specifies correct email format
-	if(!preg_match($email_exp,$email_from)) {
-    $error_message .= 'You email address is invalid.<br />';
+	 $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';//$email_exp specifies correct email format
+	if(!preg_match($email_exp,$email)) {
+    header("Location: error.php?errorCode=email");
   }
-	 */
+	 
 	$name_exp = "/^[A-Za-z .'-]+$/";//$name_exp specifies correct format
    if(!preg_match($name_exp,$first_name)) {
    	header("Location: error.php?errorCode=First Name is invalid");
@@ -77,8 +79,8 @@ if ($type == "Student"){
 	header('Location: error.php?errorCode=Student User name is already taken');
 	exit;		
 	}
-$sql ="INSERT INTO students(first_name,last_name,user_name,password)
-			VALUES('".$first_name."','".$last_name."','".$username."','" .$password."');"; 
+$sql ="INSERT INTO students(first_name,last_name,user_name,password,email)
+			VALUES('".$first_name."','".$last_name."','".$username."','" .$password."','" .$email."');"; 
 	//echo $sql; 
 	mysql_query($sql,$con) or die('</br>Could not insert into table '.mysql_error());
 }
@@ -89,11 +91,11 @@ else{
 	$result = mysql_query($query,$con) or die('</br>Could not insert into table '.mysql_error());
 	$number_of_rows = mysql_num_rows($result);
 	if($number_of_rows != 0){
-		//header('Location: error.php?errorCode=Employeer User name is already taken');
+		header('Location: error.php?errorCode=Employeer User name is already taken');
 		exit;
 	}
-	$sql ="INSERT INTO employers(first_name,last_name,user_name,password)
-			VALUES('".$first_name."','".$last_name."','".$username."','" .$password."')"; 
+	$sql ="INSERT INTO employers(first_name,last_name,user_name,password,email)
+			VALUES('".$first_name."','".$last_name."','".$username."','" .$password."','" .$email."');"; 
 	echo $sql; 
 	mysql_query($sql,$con) or die('</br>Could not insert into table '.mysql_error());
 }

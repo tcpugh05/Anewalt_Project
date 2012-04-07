@@ -10,6 +10,7 @@ CREATE TABLE `students` (
   `last_name` varchar(35) NOT NULL default 'Doe',
   `user_name` varchar(35) NOT NULL,
   `password` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL, 
 -- `resume` variable goes here later
   PRIMARY KEY  (`student_id`)
 ) ;
@@ -20,6 +21,7 @@ CREATE TABLE `employers` (
   `first_name` varchar(35) NOT NULL default 'John',
   `last_name` varchar(35) NOT NULL default 'Doe',
   `user_name` varchar(35) NOT NULL, 
+   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   PRIMARY KEY  (`employer_id`)
 ) ;

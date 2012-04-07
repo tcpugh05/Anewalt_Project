@@ -10,6 +10,7 @@
 			<div id="register_form"><form class="forms" action="register_controller.php" method="post">
 			 	First Name:<input type="text" name="first_name" style="width:500px;height:45px;"></br>
 			 	Last Name:<input type="text" name="last_name" style="width:500px;height:45px;"></br>
+			 	Email:<input type="text" name="email" style="width:500px;height:45px;"></br>
 			 	User Name:<input type="text" name="username" style="width:495px;height:45px;"></br>
 			 	Password: <input type="password" name="password"style="width:500px;height:45px;"></br>
 				Retype Psswrd: <input type="text" name="rpassword" style="width:400px;height:45px;"></br>
