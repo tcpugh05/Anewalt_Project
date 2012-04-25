@@ -1,6 +1,6 @@
 This project uses PHP and MySQL. In order to work this website locally you need to have a private server with those environments. For Mac OS X, a common one is XAMPP.
 
 In your MySQL server source the "setup.sql" file.
-	mysql> source /Wherever/You/Downloaded/The/Github/Files/Too/Anewalt_Project/setup.sql
+	mysql> source /Where/You/Downloaded/Github/Files/Anewalt_Project/setup.sql
 
 Once that's done, navigate to "localhost/Anewalt_Project/login.php"
