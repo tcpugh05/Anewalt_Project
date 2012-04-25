@@ -53,4 +53,6 @@ else
  
 // Close the mysql connection
 $dbLink->close();
+
+echo '<p>Click <a href="manager.php">here</a> to go back</p>';
 ?>

@@ -50,6 +50,6 @@ else {
 }
  
 // Echo a link back to the main page
-echo '<p>Click <a href="upload_form.php">here</a> to go back</p>';
+echo '<p>Click <a href="manager.php">here</a> to go back</p>';
 ?>
  

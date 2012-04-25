@@ -23,7 +23,15 @@ function changeProfile(){
 }
 		
 function uploadResume(){
-				document.getElementById("alter").innerHTML = 'Upload File</br><form action=\"manager.php\"' + 'enctype=\"multipart/form-data\" method=\"post\"> <input name=\"uploadedfile\" type=\"file\"/></br>'	+'<input type=\"submit\" name=\"submit\" value=\"Submit\"/></form>';
+				//document.getElementById("alter").innerHTML = 'Upload File</br><form action=\"add_file.php\"' + 'enctype=\"multipart/form-data\" method=\"post\"> <input name=\"uploadedfile\" type=\"file\"/></br>'	+'<input type=\"submit\" name=\"submit\" value=\"Submit\"/></form>';
+				document.getElementById("alter").innerHTML = "Upload File</br>" + 
+				"<form action=\"add_file.php\" method=\"post\" enctype=\"multipart/form-data\">" +
+        			"<input type=\"file\" name=\"uploaded_file\"><br>" +
+        			"<input type=\"submit\" value=\"Upload file\">" +
+    			"</form>" +
+    			"<p>" +
+        			"<a href=\"list_files.php\">See all files</a>" +
+    			"</p>"
 }
 	
 function uploadJob(){
