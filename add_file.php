@@ -1,4 +1,40 @@
 <?php
+    session_start();
+?>
+
+<?php
+    $dbLink = new mysqli('localhost', 'career_admin', 'r4z0r', 'cpsc_careers');
+    if(mysqli_connect_errno()) {
+        die("MySQL connection faile: ". mysqli_connect_error());
+    }
+
+    $sql = "SELECT student_id FROM students WHERE user_name = '".$_SESSION['username']."';";
+    //echo $sql."</br>";
+
+    $result = $dbLink->query($sql);
+    $user_id = NULL;
+
+    if($result) {
+        if($result->num_rows == 0) {
+            echo '<p>There are no rows in the database</p>';
+        }
+        else {
+            while($row = $result->fetch_assoc()) {
+                $user_id = $row['student_id'];
+            }
+        }
+
+        $result->free();
+    }
+    else {
+        echo 'Error! SQL Query failed:';
+        echo "<pre>{$dbLink->error}</pre>";
+    }
+
+    //echo $user_id."</br>";
+?>
+
+<?php
 // Check if a file has been uploaded
 if(isset($_FILES['uploaded_file'])) {
     // Make sure the file was sent without errors
@@ -19,10 +55,10 @@ if(isset($_FILES['uploaded_file'])) {
         // Create the SQL query
         $query = "
             INSERT INTO `file` (
-                `name`, `mime`, `size`, `data`, `created`
+                `student_id`, `name`, `mime`, `size`, `data`, `created`
             )
             VALUES (
-                '{$name}', '{$mime}', {$size}, '{$data}', NOW()
+                '{$user_id}', '{$name}', '{$mime}', {$size}, '{$data}', NOW()
             )";
  
         // Execute the query

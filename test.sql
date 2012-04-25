@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS cpsc_careers;
-CREATE DATABASE IF NOT EXISTS cpsc_careers;
-USE cpsc_careers;
+DROP DATABASE IF EXISTS cpsc_careers_test;
+CREATE DATABASE IF NOT EXISTS cpsc_careers_test;
+USE cpsc_careers_test;
 GRANT ALL ON *.* TO 'career_admin'@'localhost' IDENTIFIED BY 'r4z0r';
 
 DROP TABLE IF EXISTS `students`;
