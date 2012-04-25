@@ -24,7 +24,8 @@ $datetime=date("m/d/y");
 
 $sql = "INSERT into careers(a_datetime,description,contact_info,skills_needed)
 		VALUES('".$datetime."','".$desc."','".$contact."','".$skills."');";
-$result = mysql_query($sql,$con) or die(mysql.error()); 
+$result = mysql_query($sql,$con) or die(mysql.error());
+header("Location: manager.php");  
 echo $sql; 
 
 ?>
